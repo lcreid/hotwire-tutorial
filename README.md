@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my code after following (more or less) the [Hotrails tutorial](https://www.hotrails.dev/). I didn't finish all the chapters, but I think I got to Chapter 4, at least. I didn't bother with the CSS styling much, either. So the pages aren't very pretty.
 
-Things you may want to cover:
+To run in a virtualized or containerized environment where the browser is outside the container:
 
-* Ruby version
+```
+bin/dev -b 0.0.0.0
+```
 
-* System dependencies
+Leave off the `-b 0.0.0.0` for other environments.
 
-* Configuration
+There's support in this project to run in a Docker container. I use plain Docker, not Docker Desktop, on Linux.
 
-* Database creation
+To start, run:
 
-* Database initialization
+```
+docker compose up -d
+```
 
-* How to run the test suite
+To run the server:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+docker compose exec web bin/dev -b 0.0.0.0
+```
 
-* Deployment instructions
+The port mapping uses Docker ephemeral ports. To find the port you can browse to:
 
-* ...
+```
+docker compose port web 3000 | cut -d: -f 2
+```
+
+Browse to `localhost:<port number from above>`.
