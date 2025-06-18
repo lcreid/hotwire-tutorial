@@ -1,14 +1,13 @@
 <%= turbo_frame_tag "quote_#{quote.id}" do %>
-<div class="quote">
-  <%= link_to quote.name, quote_path(quote), data: { turbo_frame: "_top" } %>
-  <div class="quote__actions">
-    <%= button_to "Delete",
-                  quote_path(quote),
-                  method: :delete,
-                  class: "btn btn--light" %>
-    <%= link_to "Edit",
-                edit_quote_path(quote),
-                class: "btn btn--light" %>
-  </div>
+<div class="quote d-flex mb-1">
+  <%= link_to quote.name, quote_path(quote), data: { turbo_frame: "_top" }, class: "pe-1" %>
+  <%= button_to "Delete",
+                quote_path(quote),
+                method: :delete,
+                class: "btn btn--light",
+                form_class: "px-1" %>
+  <%= link_to "Edit",
+              edit_quote_path(quote),
+              class: "btn btn--light d-inline ps-1" %>
 </div>
 <% end %>

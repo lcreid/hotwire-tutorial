@@ -8,3 +8,32 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .d-flex {
+  display: flex;
+ }
+
+ .d-inline {
+  display: inline !important;
+ }
+
+ .mb-1 {
+  margin-bottom: 1rem;
+ }
+
+ .pb-1 {
+  padding-bottom: 1rem;
+ }
+
+ .pe-1 {
+  padding-inline-end: 1rem;
+ }
+
+ .ps-1 {
+  padding-inline-start: 1rem;
+ }
+
+ .px-1 {
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+ }
